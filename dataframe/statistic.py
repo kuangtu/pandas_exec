@@ -21,11 +21,10 @@ def countnum():
     # print (df_ic)
 
     # 基于list统计
-    mean = df_ic.groupby(level=0).apply(lambda frame: len([i for i in frame['col1'].values if i > 2]) / len(frame['col1']))
+    mean = df_ic.groupby(level=0).apply(lambda frame: len(
+        [i for i in frame['col1'].values if i > 2]) / len(frame['col1']))
     print(mean)
-
 
 
 if __name__ == '__main__':
     countnum()
-
