@@ -4,7 +4,7 @@ import numpy as np
 
 def crttwodf():
     startDate = "20190101"
-    endDdate = "20190105"
+    endDdate = "20190110"
     dates = pd.date_range(startDate, endDdate, freq='D')
     perf = pd.DataFrame({"tradeDate": dates})
 
@@ -21,4 +21,13 @@ def crttwodf():
 
     return perf, perf2
 
+def roll_test():
+    df1, df2 = crttwodf()
+    print(df1)
+    print(df1.close.rolling(3).mean())
+
+
+
+
 if __name__ == '__main__':
+    roll_test()
