@@ -49,6 +49,22 @@ def momentum(df, n):
 
     return df
 
+def rate_of_change(df, n):
+    '''
+
+    :param df:
+    :param n:
+    :return:
+    '''
+    M = df['Close'].diff(n - 1)
+    N = df['Close'].shift(n - 1)
+
+    roc = pd.Series(M / N, name='roc' + str(n))
+    df = df.join(roc)
+
+    return df
+
+
 if __name__ == '__main__':
     filename = "..\\data\\000001perf.csv"
     perf = load_perf(filename)
