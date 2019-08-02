@@ -35,10 +35,22 @@ def series_to_dataframe():
     print(df.head())
 
 
+def csv_to_series():
+
+    # pd.Series.from_csv 太旧了
+    close_df = pd.read_csv("..\\data\\series_to_csv.csv", index_col=0)
+    close_series = close_df['close']
+    print(type(close_series))
+    print(close_series)
+
 
 # series_save_csv()
 
-series_to_dataframe()
+# series_to_dataframe()
+
+# csv_to_series()
+
+
 
 
 
