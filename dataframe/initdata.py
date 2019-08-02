@@ -21,6 +21,15 @@ def create():
     print("Contents of the Dataframe : ")
     print(empDfObj)
 
+def dict_df():
+    perf_dict = {"code": ['000001', '000002', '000003'],
+                 "close": [100, 91.1, 5.4],
+                 "vol": [1000, 200, 3000]}
+
+    df = pd.DataFrame(perf_dict)
+    print(df)
+
 
 if __name__ == '__main__':
     create()
+    dict_df()
