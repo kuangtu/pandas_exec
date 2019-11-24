@@ -25,6 +25,20 @@ def countnum():
         [i for i in frame['col1'].values if i > 2]) / len(frame['col1']))
     print(mean)
 
+def statfunc():
+    perf_dict = {"code": ['000001', '000002', '000003'],
+                 "close": [100, 91.1, 5.4],
+                 "vol": [1000, 200, 3000]}
+
+    df = pd.DataFrame(perf_dict)
+    #最大、最小值所在位置
+    print(df['close'].idxmin())
+    min_close = df.iloc[df['close'].idxmin(),:]
+    print(min_close)
+
+    max_close = df.iloc[df['close'].idxmax(), :]
+    print(max_close)
 
 if __name__ == '__main__':
-    countnum()
+    # countnum()
+    statfunc()
