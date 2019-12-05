@@ -39,6 +39,9 @@ def statfunc():
     max_close = df.iloc[df['close'].idxmax(), :]
     print(max_close)
 
+    result = df.any(axis=0)
+    print(result)
+
 if __name__ == '__main__':
     # countnum()
     statfunc()
